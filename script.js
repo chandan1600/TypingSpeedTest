@@ -3,10 +3,12 @@ const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p").innerHTML;
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
+const errorNum = document.querySelector(".errors");
 
 timer = [0,0,0,0];
 var interval;
 var timerRunning = false;
+
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function zero(time){
@@ -31,6 +33,8 @@ function beginTimer(){
 function spellChecker(){
     let enteredText = testArea.value;
     let matchOriginText = originText.substring(0, enteredText.length);
+    let count = 0;
+    errorNum.innerHTML = count;
 
     if(enteredText == originText){
         testWrapper.style.borderColor = "#32CD32";
@@ -43,6 +47,7 @@ function spellChecker(){
         testWrapper.style.borderColor = "#FFA500";
         }
     }
+    
 }
 
 // Start the timer:
@@ -64,6 +69,7 @@ function reset(){
     testArea.value = "";
     theTimer.innerHTML = "00:00:00";
     testWrapper.style.borderColor = "grey";
+    errorNum.innerHTML = "0";
 }
 
 // Event listeners for keyboard input and the reset button:

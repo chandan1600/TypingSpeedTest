@@ -169,7 +169,17 @@ body {
 }
 
 .timer {
-    font-size: 3em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.errors {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.errorText{
+    font-size: 2em;
     font-weight: bold;
 }
 
